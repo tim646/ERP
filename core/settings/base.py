@@ -39,10 +39,16 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_yasg',
-    "phonenumber_field"
+    "phonenumber_field",
+    'django_filters',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend',
+                                "rest_framework.filters.SearchFilter", ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
