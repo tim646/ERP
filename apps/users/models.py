@@ -1,5 +1,5 @@
 from django.db import models
-
+from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import AbstractUser, UserManager
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -32,6 +32,15 @@ class CustomUser(models.Model):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+    @property
+    def tokens(self):
+        refresh = RefreshToken.for_user(self)
+        data = {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+        }
+        return data
 
     def __str__(self):
         return self.name
