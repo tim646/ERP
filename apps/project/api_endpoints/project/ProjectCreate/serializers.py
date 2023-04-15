@@ -4,10 +4,6 @@ from apps.project.models import Project, Category, ProjectType
 
 
 class ProjectCreateSerializer(ModelSerializer):
-    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), many=True)
-    project_type = serializers.PrimaryKeyRelatedField(queryset=ProjectType.objects.all(), many=True)
-
-
     class Meta:
         model = Project
         fields = [

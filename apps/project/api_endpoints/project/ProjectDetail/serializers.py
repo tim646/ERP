@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 
-from apps.project.models import Project, Category, ProjectType
+from apps.project.models import Project
 
 
 class ProjectRetrieveSerializer(ModelSerializer):

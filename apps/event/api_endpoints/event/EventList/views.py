@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView
-from rest_framework.permissions import IsAuthenticated
 from apps.event.models import Event
 from .serializers import EventListSerializer
 

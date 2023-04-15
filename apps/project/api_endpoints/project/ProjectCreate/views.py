@@ -10,8 +10,5 @@ class ProjectCreateAPIView(CreateAPIView):
     serializer_class = ProjectCreateSerializer
     permission_classes = [IsAuthenticated]
 
-    def perform_create(self, serializer):
-        serializer.save()
-
 
 __all__ = ['ProjectCreateAPIView']
